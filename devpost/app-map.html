@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SnazzyCash App Map</title>
+    <style>
+      :root {
+        --bg: #0e1722;
+        --panel: #121f2d;
+        --line: rgba(148, 163, 184, 0.24);
+        --text: #edf5ff;
+        --muted: #bfd0e3;
+        --accent: #f5b041;
+        --accent-2: #70d9c5;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+      }
+      .page { max-width: 980px; margin: 0 auto; padding: 40px 20px 80px; }
+      h1, h2, h3 { margin-top: 0; }
+      h1 { font-size: clamp(2rem, 4vw, 2.8rem); }
+      h2 { margin-top: 2rem; }
+      p, li { color: var(--muted); }
+      .panel {
+        background: rgba(18, 29, 42, 0.88);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 18px 20px;
+        margin-top: 22px;
+      }
+      .map {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr 1fr;
+        gap: 16px;
+        align-items: stretch;
+        margin-top: 18px;
+      }
+      .box {
+        background: rgba(14, 23, 34, 0.9);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 16px;
+      }
+      .route {
+        display: grid;
+        gap: 12px;
+      }
+      .route-step {
+        border-left: 2px solid var(--accent);
+        padding-left: 12px;
+      }
+      code {
+        font-family: Consolas, monospace;
+        color: #e7f3ff;
+      }
+      .note {
+        background: rgba(112, 217, 197, 0.08);
+        border: 1px solid rgba(112, 217, 197, 0.28);
+        border-radius: 10px;
+        padding: 12px 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <h1>SnazzyCash App Map</h1>
+      <p>This small app answers one question: is this purchase price fair compared with bundled sample prices, and what should the owner say next?</p>
+
+      <div class="panel">
+        <h2>What the app is doing</h2>
+        <p>The user picks a category, enters the vendor and item, chooses whether they are a loyal customer or a new customer, and submits the price. The app compares that against category sample prices and shows a win/loss result with a plain-language talking point.</p>
+      </div>
+
+      <div class="map">
+        <div class="box">
+          <h3>Start here</h3>
+          <p><code>src/app/page.tsx</code></p>
+          <p>This file owns the one-screen form and the live fairness result.</p>
+        </div>
+        <div class="box">
+          <h3>Pricing data</h3>
+          <p><code>src/data/pricing-data.json</code></p>
+          <p>Bundled sample ranges for office supplies, subscriptions, and software.</p>
+        </div>
+        <div class="box">
+          <h3>Visual layer</h3>
+          <p><code>src/app/globals.css</code></p>
+          <p>The warm cream base, crisp coral and violet blocks, mint success cues, and coral SnazzyCash brand badge keep the interface energetic and inviting without a default framework kit.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Reference route</h2>
+        <div class="route">
+          <div class="route-step">
+            <strong>1. Fill in the form</strong>
+            <p>Open <code>src/app/page.tsx</code> and look at the form state, category list, category-switch reset, and submit handler.</p>
+          </div>
+          <div class="route-step">
+            <strong>2. Trace the calculation</strong>
+            <p>Follow the pricing logic in the same file: office-supply totals become per-unit prices, while software/subscription prices become monthly per-seat equivalents before the sample-range comparison.</p>
+          </div>
+          <div class="route-step">
+            <strong>3. Watch the result render</strong>
+            <p>See how the summary panel updates from the methodology state to the rendered score, badge, and next-step message.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>To change this, start here</h2>
+        <ul>
+          <li>Change the fairness logic in <code>src/app/page.tsx</code> if you want a different score behavior.</li>
+          <li>Change sample ranges and their comparison basis in <code>src/data/pricing-data.json</code> if you want different category baselines.</li>
+          <li>Change the styling in <code>src/app/globals.css</code> if you want the UI to feel more premium, more playful, or more minimal.</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2>Practice to reuse</h2>
+        <p class="note">Use a visible acceptance criterion, then trace the exact code path that produces it. In this app, “a valid submit shows a win/loss result” was the key behavior, and the implementation and verification both lived in the same screen. This is a good pattern for future agent-assisted builds: define the observable outcome first, then prove the code path that creates it.</p>
+      </div>
+
+      <div class="panel">
+        <h2>Run it again</h2>
+        <p>From the project root:</p>
+        <p><code>npm run dev</code></p>
+        <p>Open <code>http://localhost:3000</code></p>
+      </div>
+    </div>
+  </body>
+</html>

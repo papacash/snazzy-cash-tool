@@ -1,0 +1,41 @@
+{
+  "office-supplies": {
+    "label": "Office supplies",
+    "purchaseType": "by-unit",
+    "benchmarkUnit": "per unit",
+    "range": { "min": 5, "max": 18 },
+    "items": [
+      { "name": "copy paper", "unitPrice": 7.5 },
+      { "name": "printer ink", "unitPrice": 12.5 },
+      { "name": "notebook pack", "unitPrice": 9.5 },
+      { "name": "pens", "unitPrice": 6.5 },
+      { "name": "staples", "unitPrice": 8.5 }
+    ]
+  },
+  "subscriptions": {
+    "label": "Subscriptions",
+    "purchaseType": "recurring-per-seat",
+    "benchmarkUnit": "per seat/license per month",
+    "range": { "min": 10, "max": 35 },
+    "items": [
+      { "name": "cloud storage", "unitPrice": 15 },
+      { "name": "design tool", "unitPrice": 22 },
+      { "name": "email service", "unitPrice": 18 },
+      { "name": "project tool", "unitPrice": 28 },
+      { "name": "analytics plan", "unitPrice": 17 }
+    ]
+  },
+  "software": {
+    "label": "Software",
+    "purchaseType": "recurring-per-seat",
+    "benchmarkUnit": "per seat/license per month",
+    "range": { "min": 15, "max": 45 },
+    "items": [
+      { "name": "cloud backup", "unitPrice": 18 },
+      { "name": "bookkeeping app", "unitPrice": 26 },
+      { "name": "collaboration suite", "unitPrice": 34 },
+      { "name": "design software", "unitPrice": 29 },
+      { "name": "task manager", "unitPrice": 21 }
+    ]
+  }
+}

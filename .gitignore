@@ -1,0 +1,18 @@
+# Personal learning context — stays out of commits by default.
+# Conversations with your AI provider are separate from this.
+/devpost/learner-profile.md
+
+# Local credentials; keep a secret-free example commitable.
+.env
+.env.*
+!.env.example
+
+# Local project and dependency artifacts
+/node_modules/
+/.next/
+/.agents/
+/.claude/
+/agent/
+/skills-lock.json
+
+node_modules
