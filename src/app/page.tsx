@@ -105,7 +105,7 @@ export default function HomePage() {
     const verdict = winLoss === 'win' ? 'Fair price' : 'Price looks high';
     const summary = winLoss === 'win'
       ? 'This is in line with the sample typical prices for this category.'
-      : 'This is above the sample range for this category, so it may be worth asking for a better price.';
+      : 'This is above the sample range. Use the suggestion below to negotiate a better price.';
 
     const suggestion = form.relationship === 'loyalty'
       ? 'Mention that you’ve been a repeat customer and ask whether there is a loyalty rate or bulk discount.'
@@ -150,6 +150,9 @@ export default function HomePage() {
             <div>
               <p className="eyebrow">SnazzyCash</p>
               <h1>Price fairness check</h1>
+              <p className="intro-copy">
+                A quick price check for small-business owners. See if you are getting a fair deal—and what to ask for if you are not.
+              </p>
             </div>
           </div>
 
@@ -280,7 +283,7 @@ export default function HomePage() {
               ) : null}
 
               <div className="suggestion-box">
-                <h3>What to say next</h3>
+                <h3>{review.winLoss === 'loss' ? 'Try negotiating a better deal' : 'What to say next'}</h3>
                 <p>{review.suggestion}</p>
               </div>
             </div>

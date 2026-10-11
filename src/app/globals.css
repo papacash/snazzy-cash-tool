@@ -120,7 +120,7 @@ h1 {
   font-size: clamp(2.2rem, 4vw, 3.35rem);
   line-height: 1.02;
   letter-spacing: -0.055em;
-  margin-bottom: 30px;
+  margin-bottom: 14px;
 }
 
 h1::after {
@@ -131,6 +131,13 @@ h1::after {
   border-radius: 2px;
   background: #7044b7;
   content: "";
+}
+
+.intro-copy {
+  max-width: 44ch;
+  margin: 0 0 26px;
+  color: var(--muted);
+  font-weight: 600;
 }
 
 h2 {
